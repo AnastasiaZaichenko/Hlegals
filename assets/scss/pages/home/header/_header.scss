@@ -2,31 +2,99 @@
 @use "../../../mixins" as *;
 
 .page-header {
+  position: relative;
   background: linear-gradient($bg-gradient1);
 
+
+  &::before {
+    content: "";
+    @include abs-position;
+    background: url(../img/Frame2.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 86.4vh;
+
+  }
+
+  &::after {
+    content: "";
+    @include abs-position(75%);
+    background: linear-gradient(to top, $color-primary 0%, transparent 100%);
+  }
+
+
+
   &__grid {
+    display: grid;
     position: absolute;
-    background-color: red;
     top: 0;
     right: 0;
     left: 0;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "logo actions" "logo menu";
+    gap: $gap-sm $gap;
+    z-index: 2;
 
-    // todo: потом показать и оформить
-    display: none;
+    @extend %container;
+
+    @include sm-min {
+      padding-top: 50px;
+    }
+    @include sm {
+      padding-top: 20px;
+    }
+  }
+
+  &__logo {
+    grid-area: logo;
+  
+  }
+  
+  &__menu {
+    grid-area: menu;
+  }
+
+  &__actions {
+    grid-area: actions;
   }
 
   &__content {
+    position: relative;
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 
     &-title {
       margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 600px;
+      font-size: 38px;
+      line-height: 45px;
+      text-align: center;
+      color: $color-white;
+      font-weight: 400;
+      z-index: 1;
+    }
+
+    &-image {
+      transform: translate(4px, 29.5%);
+      height: 62vh;
     }
   }
 
   &__button {
     position: absolute;
-    
-    // todo: потом показать и оформить
-    display: none;
+    bottom: $gap;
+    left: 50%;
+    bottom: 0;
+    z-index: 2;
+    transform: translateX(-50%);
+    cursor: pointer;
   }
 }
