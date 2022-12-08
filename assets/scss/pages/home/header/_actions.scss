@@ -7,17 +7,26 @@
     justify-content: flex-end;
     gap: 20px;
 
-    a {
+    @include sm-min {
+        justify-content: flex-end;
+        a {
         color: $color-white;
-
+        }
     }
+    @include sm {
+        justify-content: space-between;
+        a {
+        color: $color-gray-bg-text;
+        }
+    }
+
 
     &__languages {
         display: flex;
         font-weight: 700;
         font-size: 12px;
         letter-spacing: 1px;
-        gap: 3px;
+        gap: 2px;
 
         &-link {
             border-radius: 8px;
@@ -34,6 +43,10 @@
     &__locations {
       &-link {
         font-style: normal;
+
+        @include md {
+            display: none;
+        }
     }
     }
 

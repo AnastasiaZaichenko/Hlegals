@@ -14,6 +14,10 @@
     background-position: 50% 100%;
     background-size: 86.4vh;
 
+    @include md {
+      display: none;
+    }
+
   }
 
   &::after {
@@ -31,17 +35,23 @@
     right: 0;
     left: 0;
     grid-template-columns: auto 1fr;
-    grid-template-areas: "logo actions" "logo menu";
     gap: $gap-sm $gap;
     z-index: 2;
+    align-items: center;
 
     @extend %container;
 
     @include sm-min {
       padding-top: 50px;
+      grid-template-areas: "logo actions" "logo menu";
+      gap: $gap-sm $gap;
+
     }
     @include sm {
       padding-top: 20px;
+      grid-template-areas: "actions actions" "logo menu";
+      gap: $gap;
+
     }
   }
 
@@ -72,7 +82,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 100%;
+      width: min(100% - $gap-xl, 600px);
       max-width: 600px;
       font-size: 38px;
       line-height: 45px;
@@ -84,7 +94,10 @@
 
     &-image {
       transform: translate(4px, 29.5%);
-      height: 62vh;
+
+      @media (min-height: 800px) {
+        height: 62vh;
+      }
     }
   }
 
