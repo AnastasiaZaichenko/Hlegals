@@ -1,7 +1,6 @@
 @use "../../../presets" as *;
 @use "../../../mixins" as *;
-
-$size:16px;
+$size: 16px;
 
 .slider {
   display: flex;
@@ -14,7 +13,6 @@ $size:16px;
   }
 
   &__headers {
-
     position: relative;
 
     display: flex;
@@ -47,14 +45,12 @@ $size:16px;
 
     color: $color-gray-bg-text;
 
-
     @include lg-min {
       text-align: right;
 
       font-size: 42px;
       line-height: 1.19;
     }
-
     @include lg {
       display: none;
 
@@ -160,11 +156,10 @@ $size:16px;
     justify-content: center;
 
     gap: 14px;
-
     @include md-min {
       display: none;
     }
-}
+  }
 
   &__indicator {
     width: $size;

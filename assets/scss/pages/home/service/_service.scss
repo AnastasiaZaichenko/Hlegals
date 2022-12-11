@@ -1,0 +1,154 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services {
+  position: relative;
+
+  border-radius: 0 0 12px 12px;
+  background: linear-gradient($bg-gradient2);
+
+  &::before {
+    position: absolute;
+    top: 100%;
+    right: $gap-xl;
+    left: $gap-xl;
+
+    height: $gap;
+
+    content: "";
+
+    border-radius: 0 0 12px 12px;
+    background-color: $color-services-shadow-durk;
+  }
+
+  &::after {
+    position: absolute;
+    top: 100%;
+    right: $gap;
+    left: $gap;
+
+    height: $gap-sm;
+
+    content: "";
+
+    border-radius: 0 0 12px 12px;
+    background-color: $color-services-shadow-light;
+  }
+
+  &__page-link {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: rgba($color-white, 0.5);
+
+    font-size: 14px;
+
+    &::after {
+      position: absolute;
+      top: 4px;
+
+      display: inline-block;
+
+      width: 12px;
+      height: 12px;
+
+      content: "";
+
+      background-image: url(../img/liinkarrow.svg);
+    }
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__title {
+    background: linear-gradient($text-gradient-service);
+    -webkit-background-clip: text;
+            background-clip: text;
+
+    font-size: 42px;
+    line-height: 50px;
+
+    @include md {
+      padding-bottom: 20px;
+
+      font-size: 32px;
+      line-height: 38px;
+    }
+    -webkit-text-fill-color: transparent;
+  }
+
+  &__grig {
+    display: grid;
+
+    column-gap: 40px;
+    @include md-min {
+      padding: 68px 0 80px 0;
+
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      row-gap: 30px;
+    }
+    @include md {
+      padding-bottom: 20px;
+
+      column-gap: 10px;
+      grid-template-columns: 1fr;
+      row-gap: 40px;
+    }
+  }
+}
+.service-item {
+  min-height: 260px;
+
+  gap: 17px;
+  @include md-min {
+    display: flex;
+    flex-direction: column;
+  }
+  @include md {
+    display: grid;
+    align-items: center;
+
+    min-height: 168px;
+
+    gap: 10px;
+    grid-template-areas: "icn ttl"
+    "dsc dsc";
+    grid-template-columns: 64px 1fr;
+  }
+}
+.service-item {
+  &__title {
+    color: $color-active;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.16;
+
+    grid-area: ttl;
+    @include md {
+      font-size: 18px;
+      line-height: 1.16;
+    }
+  }
+  &__description {
+    color: $color-white;
+
+    font-size: 18px;
+    line-height: 1.44;
+
+    grid-area: dsc;
+  }
+  &_icon {
+    order: -1;
+
+    grid-area: icn;
+  }
+  &__image {
+    @include md {
+      width: 64px;
+    }
+  }
+}

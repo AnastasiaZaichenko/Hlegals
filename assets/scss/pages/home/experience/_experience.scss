@@ -7,6 +7,10 @@
 
   background-color: $color-primary;
 
+  @include xx {
+    padding-bottom: 45px;
+  }
+
   &__container {
     @extend %container;
   }
