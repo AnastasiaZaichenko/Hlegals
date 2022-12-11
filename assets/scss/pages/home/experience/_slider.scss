@@ -1,0 +1,97 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.slider {
+    display: flex;
+    @include lg-min {
+        gap: 80px;
+    }
+    @include lg {
+        flex-direction: column;
+    }
+
+    &__headers {
+        position: relative;
+        flex-basis: 0;
+        flex-grow: 2;
+        display: flex;
+        gap: $gap;
+        flex-direction: column;
+
+        @include lg-min {
+            &::after {
+                content: "";
+                position: absolute;
+                right: -42px;
+                width: 4px;
+                background-color: $color-gray-bg-separator;
+                height: 100%;
+            }
+        }
+    }
+
+    &__header {
+        font-size: 42px;
+        line-height: 1.19;
+        text-align: right;
+        color: $color-gray-bg-text;
+        position: relative;
+
+        &.-active {
+        @extend %text-liner-gradient;
+        
+        @include lg-min {
+            &::after {
+                content: "";
+                position: absolute;
+                right: -42px;
+                z-index: 1;
+                width: 4px;
+                background-color: $color-accent;
+                height: 100%;
+            }
+        }
+        }
+    }
+
+    &__notes {
+        color: $color-white;
+        flex-basis: 0;
+        flex-grow: 3;
+        display: flex;
+        align-items: center;
+
+    }
+
+    &__note {
+        position: absolute;
+        z-index: -9999;
+        opacity: 0;
+        max-width: 600px;
+
+        &.-active {
+            position: static;
+            z-index: inherit;
+            opacity: 1;
+        }
+    }
+
+    &__title {
+        font-size: 32px;
+        line-height: 1.1875;
+        margin-bottom: 20px;
+        font-weight: 500;
+    }
+
+    &__description {
+        font-size: 21px;
+        line-height: 1.43;
+        font-weight: normal;
+
+
+    }
+
+    &__indicators {
+        display: none;
+    }
+}
