@@ -1,9 +1,9 @@
-$(document).ready(function(){
-	$('.menu__btn').on("click",function(){
-		$(this).toggleClass('active');
+$(document).ready(function() {
+	$(".menu__btn").on("click", function() {
+	  $(this).toggleClass("-active");
+	  $(".menu__list").stop(true, true).slideToggle(500);
 	});
-});
-
+  });
 // считали DOM элементы
 const headersList = document.querySelectorAll(".slider__header");
 const notesList = document.querySelectorAll(".slider__note");

@@ -46,7 +46,7 @@
       }
     }
 
-    &.active span {
+    &.-active span {
       &:nth-child(1) {
         top: 9px;
 
@@ -74,7 +74,18 @@
     gap: $gap-md;
     @include unlist;
     @include md {
+      position: absolute;
+      top: 100%;
+      right: 0;
+
       display: none;
+
+      padding: $gap-lg;
+
+      text-align: right;
+
+      background-color: $color-primary;
+      box-shadow: -5px 5px 10px $color-black;
     }
   }
 
