@@ -3,63 +3,65 @@
 
 .page-header {
   position: relative;
+
   background: linear-gradient($bg-gradient1);
 
 
   &::before {
     content: "";
-    @include abs-position;
+
     background: url(../img/Frame2.svg);
     background-repeat: no-repeat;
     background-position: 50% 100%;
     background-size: 86.4vh;
 
+    @include abs-position;
     @include md {
       display: none;
     }
-
   }
 
   &::after {
     content: "";
-    @include abs-position(75%);
+
     background: linear-gradient(to top, $color-primary 0%, transparent 100%);
+
+    @include abs-position(75%);
   }
 
 
 
   &__grid {
-    display: grid;
     position: absolute;
+    z-index: 2;
     top: 0;
     right: 0;
     left: 0;
-    grid-template-columns: auto 1fr;
-    gap: $gap-sm $gap;
-    z-index: 2;
+
+    display: grid;
     align-items: center;
 
     @extend %container;
-
+    gap: $gap-sm $gap;
+    grid-template-columns: auto 1fr;
     @include sm-min {
       padding-top: 50px;
-      grid-template-areas: "logo actions" "logo menu";
-      gap: $gap-sm $gap;
 
+      gap: $gap-sm $gap;
+      grid-template-areas: "logo actions" "logo menu";
     }
     @include sm {
       padding-top: 20px;
-      grid-template-areas: "actions actions" "logo menu";
-      gap: $gap;
 
+      gap: $gap;
+      grid-template-areas: "actions actions" "logo menu";
     }
   }
 
   &__logo {
     grid-area: logo;
-  
   }
-  
+
   &__menu {
     grid-area: menu;
   }
@@ -70,26 +72,32 @@
 
   &__content {
     position: relative;
-    min-height: 100vh;
+
     display: flex;
+    overflow: hidden;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+
+    min-height: 100vh;
 
     &-title {
-      margin: 0;
       position: absolute;
+      z-index: 1;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+
       width: min(100% - $gap-xl, 600px);
       max-width: 600px;
-      font-size: 38px;
-      line-height: 45px;
+      margin: 0;
+
+      transform: translate(-50%, -50%);
       text-align: center;
+
       color: $color-white;
+
+      font-size: 38px;
       font-weight: 400;
-      z-index: 1;
+      line-height: 45px;
     }
 
     &-image {
@@ -103,11 +111,12 @@
 
   &__button {
     position: absolute;
-    bottom: $gap;
-    left: 50%;
-    bottom: 0;
     z-index: 2;
-    transform: translateX(-50%);
+    bottom: $gap;
+    bottom: 0;
+    left: 50%;
+
     cursor: pointer;
+    transform: translateX(-50%);
   }
 }

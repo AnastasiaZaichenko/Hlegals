@@ -2,62 +2,64 @@
 @use "../../../mixins" as *;
 
 .actions {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 20px;
+  @include sm-min {
     justify-content: flex-end;
-    gap: 20px;
-
-    @include sm-min {
-        justify-content: flex-end;
-        a {
-        color: $color-white;
-        }
+    a {
+      color: $color-white;
     }
-    @include sm {
-        justify-content: space-between;
-        a {
-        color: $color-gray-bg-text;
-        }
+  }
+  @include sm {
+    justify-content: space-between;
+    a {
+      color: $color-gray-bg-text;
     }
+  }
 
 
-    &__languages {
-        display: flex;
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: 1px;
-        gap: 2px;
+  &__languages {
+    display: flex;
 
-        &-link {
-            border-radius: 8px;
-            padding: 5px 6px;
+    letter-spacing: 1px;
 
-            &--active {
-             background-color: $color-accent;
+    font-size: 12px;
+    font-weight: 700;
 
-            }
-        }
+    gap: 2px;
 
+    &-link {
+      padding: 5px 6px;
+
+      border-radius: 8px;
+
+      &--active {
+        background-color: $color-accent;
+      }
     }
+  }
 
-    &__locations {
-      &-link {
-        font-style: normal;
+  &__locations {
+    &-link {
+      font-style: normal;
 
-        @include md {
-            display: none;
-        }
+      @include md {
+        display: none;
+      }
     }
-    }
+  }
 
-    &__phones {
-      &-link {
-        font-weight: 700;
+  &__phones {
+    &-link {
+      font-weight: 700;
     }
+  }
+  &__socials {
+    @include lg {
+      display: none;
     }
-    &__socials {
-        @include lg {
-            display: none;
-        }
-    }
+  }
 }

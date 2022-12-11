@@ -2,11 +2,12 @@
 @use "../../../mixins" as *;
 
 .experience {
-    background-color: $color-primary;
-    padding-top: 80px;
-    padding-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 
-    &__container {
-        @extend %container;
-    }
+  background-color: $color-primary;
+
+  &__container {
+    @extend %container;
+  }
 }
