@@ -8,6 +8,10 @@ $size: 16px;
 
   border-radius: 12px;
 
+  @include lg {
+    margin-top: 40px;
+  }
+
 
   &__title {
     @include visually-hidden;
@@ -17,7 +21,7 @@ $size: 16px;
     display: flex;
 
     border-radius: 12px;
-    background-color: $color-gray-bg-alt;
+    background-color: $color-gray-bg;
 
     @extend %container;
   }
@@ -42,7 +46,7 @@ $size: 16px;
 
       content: "";
 
-      background-image: url(../img/Vector\ 2.svg);
+      background-image: url(../img/linkarrowblue.svg);
     }
   }
   &__description {
@@ -50,6 +54,17 @@ $size: 16px;
     flex-direction: column;
 
     padding: 40px;
+
+    @include lg {
+      padding: 20px;
+    }
+
+    &-author {
+      display: flex;
+      flex-direction: column;
+
+      gap: 5px;
+    }
 
     &-text {
       max-width: 827px;
@@ -63,18 +78,30 @@ $size: 16px;
       font-weight: 700;
       line-height: 1.19;
 
+    
       -webkit-text-fill-color: transparent;
               text-fill-color: transparent;
+
+        @include lg {
+        font-size: 32px;
+        line-height: 1.18;
+        }
     }
+
 
 
     &-signature {
       display: flex;
-      flex-direction: column;
 
-      gap: 5px;
+
+      @include lg {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        gap: $gap-sm;
+        align-items: center;
+      }
     }
-    &-author {
+    &-name {
       color: $color-gray-bg-text;
 
       font-size: 18px;
@@ -82,9 +109,21 @@ $size: 16px;
       font-style: normal;
       line-height: 1.17;
     }
+    &-position {
+      color: $color-gray-bg-text;
+
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.375;
+    }
   }
   &__pictures {
     order: -1;
+
+    @include lg {
+      display: none;
+    }
   }
 
 
@@ -107,6 +146,15 @@ $size: 16px;
 
     &.-active {
       opacity: 1;
+    }
+  }
+
+
+  &__image-mobile {
+    border-radius: 30px;
+
+    @include lg-min {
+      display: none;
     }
   }
 }
