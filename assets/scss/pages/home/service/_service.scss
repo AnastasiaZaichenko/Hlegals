@@ -65,7 +65,9 @@
   &__title {
     background: linear-gradient($text-gradient-service);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
 
     font-size: 42px;
     line-height: 50px;
@@ -76,7 +78,6 @@
       font-size: 32px;
       line-height: 38px;
     }
-    -webkit-text-fill-color: transparent;
   }
 
   &__grig {
