@@ -12,7 +12,7 @@
 
     background: url(../img/Frame2.svg);
     background-repeat: no-repeat;
-    background-position: 50% 100%;
+    background-position: 50% 110%;
     background-size: 86.4vh;
 
     @include abs-position;
@@ -96,12 +96,12 @@
       color: $color-white;
 
       font-size: 38px;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 45px;
     }
 
     &-image {
-      transform: translate(4px, 29.5%);
+      transform: translate(4px, 29.2%);
 
       @media (min-height: 800px) {
         height: 62vh;

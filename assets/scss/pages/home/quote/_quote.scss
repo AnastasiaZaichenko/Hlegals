@@ -1,0 +1,112 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+$size: 16px;
+
+.quote {
+  margin-top: 60px;
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+
+
+  &__title {
+    @include visually-hidden;
+  }
+
+  &__content {
+    display: flex;
+
+    border-radius: 12px;
+    background-color: $color-gray-bg-alt;
+
+    @extend %container;
+  }
+  &__links {
+    position: relative;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.21;
+  }
+  &__link {
+    &::after {
+      position: absolute;
+      top: 2.5px;
+      left: 88px;
+
+      width: 9px;
+      height: 12px;
+
+      content: "";
+
+      background-image: url(../img/Vector\ 2.svg);
+    }
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    padding: 40px;
+
+    &-text {
+      max-width: 827px;
+      margin-bottom: 20px;
+
+      background: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+      -webkit-background-clip: text;
+              background-clip: text;
+
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.19;
+
+      -webkit-text-fill-color: transparent;
+              text-fill-color: transparent;
+    }
+
+
+    &-signature {
+      display: flex;
+      flex-direction: column;
+
+      gap: 5px;
+    }
+    &-author {
+      color: $color-gray-bg-text;
+
+      font-size: 18px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.17;
+    }
+  }
+  &__pictures {
+    order: -1;
+  }
+
+
+  &__slider-indicators {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+
+    gap: 14px;
+  }
+
+  &__slider-indicator {
+    width: $size;
+    height: $size;
+
+    opacity: 0.2;
+    border-radius: $size * 0.5;
+    background-color: $color-active;
+
+    &.-active {
+      opacity: 1;
+    }
+  }
+}

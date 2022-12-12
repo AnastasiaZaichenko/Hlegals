@@ -37,6 +37,7 @@
       border-radius: 8px;
 
       &.-active {
+        color: $color-white;
         background-color: $color-accent;
       }
     }

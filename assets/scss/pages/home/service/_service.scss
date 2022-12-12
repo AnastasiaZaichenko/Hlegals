@@ -65,9 +65,7 @@
   &__title {
     background: linear-gradient($text-gradient-service);
     -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+            background-clip: text;
 
     font-size: 42px;
     line-height: 50px;
@@ -78,6 +76,7 @@
       font-size: 32px;
       line-height: 38px;
     }
+    -webkit-text-fill-color: transparent;
   }
 
   &__grig {
@@ -142,7 +141,7 @@
 
     grid-area: dsc;
   }
-  &_icon {
+  &__icon {
     order: -1;
 
     grid-area: icn;
