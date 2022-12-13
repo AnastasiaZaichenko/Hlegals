@@ -15,12 +15,16 @@
 }
 
 %cases-box {
-
-  padding: 20px;
-  border: $color-white 1px solid;
-
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: flex-end;
+
+  padding: $gap;
+
+  border: $color-white 1px solid;
+
+  gap: $gap;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }

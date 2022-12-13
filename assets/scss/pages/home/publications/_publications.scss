@@ -1,0 +1,142 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.publications {
+    padding-top:40px;
+    background-color: $color-gray-bg;
+    position: relative;
+    ::after {
+        position: absolute;
+        top: 85%;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        background: -webkit-gradient(linear, left bottom, left top, from($color-gray-bg) -50%, to(transparent 100%));
+        background: -o-linear-gradient(bottom, $color-gray-bg -50%, transparent 100%);
+        background: linear-gradient(to top, $color-gray-bg -50%, transparent 100%);
+    }
+
+
+&__container {
+    @extend %container;
+
+  
+}
+&__page-link {
+    position: relative;
+    font-weight: 700;
+font-size: 14px;
+line-height: 17px;
+
+letter-spacing: 1px;
+text-transform: uppercase;
+
+
+color: $color-active;
+
+&::after {
+    position: absolute;
+    top: 2.5px;
+    left: 97px;
+
+    width: 9px;
+    height: 12px;
+
+    content: "";
+
+    background-image: url(../img/linkarrowblue.svg);
+  }
+}
+&__title {
+    font-weight: 700;
+font-size: 42px;
+line-height: 1.19;
+
+background: linear-gradient(90.13deg, $color-accent -50%, #EF8080 50%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+
+}
+
+&__column {
+    column-count: 3;
+    column-width: 40px;
+    padding-top: 20px;
+}
+&__box {
+    max-width: 413px;
+    background-color: $color-white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 40px;
+}
+&__caption {
+    font-weight: 400;
+font-size: 18px;
+line-height: 1.16;
+
+color: $color-active;
+margin-bottom: 10px;
+
+}
+&__date {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-gray-bg-text;
+
+}
+
+&__description {
+    font-weight: 400;
+font-size: 16px;
+line-height: 1.375;
+color: $color-black;
+
+border-top: $color-gray-bg-separator 4px solid;
+padding-top: 18px;
+margin-top: 18px;
+}
+
+&__picture {
+    max-width: 413px;
+}
+&__image {
+    width: 111%;
+    position: relative;
+    top: -20px;
+    left: -19.9px;
+    border-radius: 8px 8px 0 0;
+}
+
+
+&__btn {
+    border: $color-active 1px solid;
+    background-color: $color-active;
+    border-radius: 12px;
+    min-width: 250px;
+    min-height: 50px;
+    position: absolute;
+    bottom: 80px;
+    left: 40%;
+    color: $color-white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 5px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
+}
+
+div.publications__column > div:nth-child(1) {
+    margin-top: 0;
+}
