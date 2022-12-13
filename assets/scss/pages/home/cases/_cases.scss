@@ -7,9 +7,17 @@
     @extend %container;
     background-color: $color-gray-bg;
     border-radius: 12px;
-    display: grid;
-    grid-template-columns: 320px 113px 320px 134px 433px;
-    grid-template-rows: 57px 198px 198px;
+
+    @include ul-min {
+        grid-template-columns: 320px 113px 320px 134px 433px;
+        grid-template-rows: 57px 198px 198px;
+        display: grid;
+    }
+    @include ul-lg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
 
 }
 
@@ -30,60 +38,110 @@
     display: flex;
     align-items: flex-end;
     color: $color-primary-soft;
+    position: relative;
+
+    @include md {
+        font-size: 18px;
+        line-height: 1.16;
+    }
 }
 
 &__text {
+    color: $color-gray-bg-text;
     font-size: 18px;
     line-height: 1.44;
-    color: $color-gray-bg-text;
 }
     
 
 
 &__wrap-1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
+    @include ul-min {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+
 
     @extend %cases-box;
 
+
+    @include md {
+        gap:$gap;
+    }
 }
 
 &__wrap-2 {
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 3;
-
+    @include ul-min {
+        grid-column-start: 3;
+        grid-column-end: 5;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
     @extend %cases-box;
+
+    @include md {
+        gap:$gap-sm;
+    }
 }
 
 &__wrap-3 {
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    @include ul-min {
+        grid-column-start: 5;
+        grid-column-end: 6;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
   
     @extend %cases-box;
+
+    @include md {
+        gap:$gap-sm;
+    }
+
 }
 
 &__wrap-4 {
-    grid-column-start: 1;
-    grid-column-end: 2;
+    @include ul-min {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
 
     @extend %cases-box;
+
+
+    @include md {
+        gap:$gap-sm;
+    }
 }
 
 &__wrap-5 {
-    grid-column-start: 2;
-    grid-column-end: 4;
+    @include ul-min {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
     
     @extend %cases-box;
 
+
+    @include md {
+        gap:$gap-sm;
+    }
+
 }
 &__wrap-6 {
-    grid-column-start: 4;
-    grid-column-end: 6;
-
+    @include ul-min {
+        grid-column-start: 4;
+        grid-column-end: 6;
+    }
+ 
     @extend %cases-box;
+
+
+    @include md {
+        gap:$gap-sm;
+    }
 }
 }
