@@ -1,0 +1,89 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.cases {
+
+&__container {
+    @extend %container;
+    background-color: $color-gray-bg;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 320px 113px 320px 134px 433px;
+    grid-template-rows: 57px 198px 198px;
+
+}
+
+&__title {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 20px;
+    border: $color-white 1px solid;
+    font-size: 14px;
+    line-height: 1.21;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: $color-accent;
+}
+&__link {
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: flex-end;
+    color: $color-primary-soft;
+}
+
+&__text {
+    font-size: 18px;
+    line-height: 1.44;
+    color: $color-gray-bg-text;
+}
+    
+
+
+&__wrap-1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+    @extend %cases-box;
+
+}
+
+&__wrap-2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    @extend %cases-box;
+}
+
+&__wrap-3 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  
+    @extend %cases-box;
+}
+
+&__wrap-4 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+    @extend %cases-box;
+}
+
+&__wrap-5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    
+    @extend %cases-box;
+
+}
+&__wrap-6 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+
+    @extend %cases-box;
+}
+}

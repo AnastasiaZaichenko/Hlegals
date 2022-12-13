@@ -1,6 +1,13 @@
 @use "../presets" as *;
 $diff: 0.2px;
 
+@mixin xul-min {
+  @media (min-width: $xul) {
+    @content;
+  }
+}
+
+
 /* ul */
 @mixin ul-min {
   @media (min-width: $ul) {
