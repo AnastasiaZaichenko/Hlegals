@@ -2,146 +2,132 @@
 @use "../../../mixins" as *;
 
 .cases {
-
-&__container {
-    @extend %container;
-    background-color: $color-gray-bg;
+  &__container {
     border-radius: 12px;
+    background-color: $color-gray-bg;
 
+    @extend %container;
     @include ul-min {
-        grid-template-columns: 320px 113px 320px 134px 433px;
-        grid-template-rows: 57px 198px 198px;
-        display: grid;
+      display: grid;
+
+      grid-template-columns: 320px 113px 320px 134px 433px;
+      grid-template-rows: 57px 198px 198px;
     }
     @include ul-lg {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        align-items: start;
+      display: grid;
+      align-items: start;
+
+      grid-template-columns: 1fr 1fr;
     }
+  }
 
-}
-
-&__title {
-    grid-column-start: 1;
-    grid-column-end: 3;
+  &__title {
     padding: 20px;
-    border: $color-white 1px solid;
-    font-size: 14px;
-    line-height: 1.21;
+
     letter-spacing: 1px;
     text-transform: uppercase;
+
     color: $color-accent;
-}
-&__link {
-    font-size: 24px;
-    line-height: 28px;
-    display: flex;
-    align-items: flex-end;
-    color: $color-primary-soft;
+    border: $color-white 1px solid;
+
+    font-size: 14px;
+    line-height: 1.21;
+
+    grid-column-end: 3;
+    grid-column-start: 1;
+  }
+  &__link {
     position: relative;
 
-    @include md {
-        font-size: 18px;
-        line-height: 1.16;
-    }
-}
+    display: flex;
+    align-items: flex-end;
 
-&__text {
+    color: $color-primary-soft;
+
+    font-size: 24px;
+    line-height: 28px;
+
+    @include md {
+      font-size: 18px;
+      line-height: 1.16;
+    }
+  }
+
+  &__text {
     color: $color-gray-bg-text;
+
     font-size: 18px;
     line-height: 1.44;
-}
-    
-
-
-&__wrap-1 {
-    @include ul-min {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
+  }
 
 
 
+  &__wrap-1 {
     @extend %cases-box;
-
-
-    @include md {
-        gap:$gap;
-    }
-}
-
-&__wrap-2 {
     @include ul-min {
-        grid-column-start: 3;
-        grid-column-end: 5;
-        grid-row-start: 1;
-        grid-row-end: 3;
+      grid-column-end: 3;
+      grid-column-start: 1;
     }
-    @extend %cases-box;
-
     @include md {
-        gap:$gap-sm;
+      gap: $gap;
     }
-}
+  }
 
-&__wrap-3 {
+  &__wrap-2 {
+    @extend %cases-box;
     @include ul-min {
-        grid-column-start: 5;
-        grid-column-end: 6;
-        grid-row-start: 1;
-        grid-row-end: 3;
+      grid-column-end: 5;
+      grid-column-start: 3;
+      grid-row-end: 3;
+      grid-row-start: 1;
     }
-
-  
-    @extend %cases-box;
-
     @include md {
-        gap:$gap-sm;
+      gap: $gap-sm;
     }
+  }
 
-}
-
-&__wrap-4 {
+  &__wrap-3 {
+    @extend %cases-box;
     @include ul-min {
-        grid-column-start: 1;
-        grid-column-end: 2;
+      grid-column-end: 6;
+      grid-column-start: 5;
+      grid-row-end: 3;
+      grid-row-start: 1;
     }
-
-
-    @extend %cases-box;
-
-
     @include md {
-        gap:$gap-sm;
+      gap: $gap-sm;
     }
-}
+  }
 
-&__wrap-5 {
+  &__wrap-4 {
+    @extend %cases-box;
     @include ul-min {
-        grid-column-start: 2;
-        grid-column-end: 4;
+      grid-column-end: 2;
+      grid-column-start: 1;
     }
-
-    
-    @extend %cases-box;
-
-
     @include md {
-        gap:$gap-sm;
+      gap: $gap-sm;
     }
+  }
 
-}
-&__wrap-6 {
+  &__wrap-5 {
+    @extend %cases-box;
     @include ul-min {
-        grid-column-start: 4;
-        grid-column-end: 6;
+      grid-column-end: 4;
+      grid-column-start: 2;
     }
- 
-    @extend %cases-box;
-
-
     @include md {
-        gap:$gap-sm;
+      gap: $gap-sm;
     }
-}
+  }
+  &__wrap-6 {
+    @extend %cases-box;
+    @include ul-min {
+      grid-column-end: 6;
+      grid-column-start: 4;
+    }
+    @include md {
+      gap: $gap-sm;
+    }
+  }
 }

@@ -12,9 +12,14 @@
         bottom: 0;
         left: 0;
         content: "";
-        background: -webkit-gradient(linear, left bottom, left top, from($color-gray-bg) -50%, to(transparent 100%));
-        background: -o-linear-gradient(bottom, $color-gray-bg -50%, transparent 100%);
-        background: linear-gradient(to top, $color-gray-bg -50%, transparent 100%);
+        background: -webkit-gradient(linear, left bottom, left top, from($color-gray-bg) -300%, to(transparent 90%));
+        background: -o-linear-gradient(bottom, $color-gray-bg -300%, transparent 90%);
+       
+        background: linear-gradient(to top, $color-gray-bg -300%, transparent 90%);
+       
+        @include md {
+            display: none;
+         }
     }
 
 
@@ -26,14 +31,14 @@
 &__page-link {
     position: relative;
     font-weight: 700;
-font-size: 14px;
-line-height: 17px;
+    font-size: 14px;
+    line-height: 17px;
 
-letter-spacing: 1px;
-text-transform: uppercase;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
 
-color: $color-active;
+    color: $color-active;
 
 &::after {
     position: absolute;
@@ -50,36 +55,60 @@ color: $color-active;
 }
 &__title {
     font-weight: 700;
-font-size: 42px;
-line-height: 1.19;
+    font-size: 42px;
+    line-height: 1.19;
 
 background: linear-gradient(90.13deg, $color-accent -50%, #EF8080 50%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
-text-fill-color: transparent;
+
+@include md {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.187;
+}
 
 }
 
 &__column {
-    column-count: 3;
-    column-width: 40px;
+
     padding-top: 20px;
+    @include md-min {
+        column-count: 3;
+        column-width: 40px;
+
+    }
+
+    @include md {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 &__box {
     max-width: 413px;
     background-color: $color-white;
     border-radius: 8px;
-    padding: 20px;
     margin-top: 40px;
+
+    @include md {
+        max-width: 100%;
+    }
+}
+
+&__content {
+    padding: 20px;
+
 }
 &__caption {
     font-weight: 400;
-font-size: 18px;
-line-height: 1.16;
+    font-size: 18px;
+    line-height: 1.16;
 
-color: $color-active;
-margin-bottom: 10px;
+    color: $color-active;
+    margin-bottom: 10px;
 
 }
 &__date {
@@ -94,27 +123,26 @@ margin-bottom: 10px;
 
 &__description {
     font-weight: 400;
-font-size: 16px;
-line-height: 1.375;
-color: $color-black;
+    font-size: 16px;
+    line-height: 1.375;
+    color: $color-black;
 
 border-top: $color-gray-bg-separator 4px solid;
 padding-top: 18px;
 margin-top: 18px;
+
+@include xx {
+    display: none;
+}
 }
 
-&__picture {
-    max-width: 413px;
-}
 &__image {
-    width: 111%;
-    position: relative;
-    top: -20px;
-    left: -19.9px;
-    border-radius: 8px 8px 0 0;
+    width: 100%;
 }
 
-
+&__button {
+    position: relative;
+}
 &__btn {
     border: $color-active 1px solid;
     background-color: $color-active;
@@ -122,10 +150,11 @@ margin-top: 18px;
     min-width: 250px;
     min-height: 50px;
     position: absolute;
+
     bottom: 80px;
     left: 40%;
     color: $color-white;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,9 +163,39 @@ margin-top: 18px;
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
+
+    @include md {
+       position: static;
+       margin: 40px auto;
+       box-shadow: 0 0 15px $color-active;
+       max-width: 225px;
+     }
 }
 }
 
 div.publications__column > div:nth-child(1) {
     margin-top: 0;
 }
+  
+div.publications__column > div:nth-child(2) {
+    @include xx {
+        order: 1;
+    }
+}
+div.publications__column > div:nth-child(4) {
+    @include xx {
+       display: none;
+    }
+}
+div.publications__column > div:nth-child(5) {
+    @include xx {
+       display: none;
+    }
+}
+
+div.publications__column > div:nth-child(6) {
+    @include md {
+       display: none;
+    }
+}
+
