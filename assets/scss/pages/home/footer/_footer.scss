@@ -1,0 +1,106 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+
+footer {
+  background-color: $color-gray-bg;
+}
+.footer {
+
+&__container {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 32px 0 50px;
+
+  border-top: $color-gray-bg-separator 4px solid;
+
+  @extend %container;
+  @include lg {
+    align-items: center;
+    flex-direction: column;
+
+    gap: $gap;
+  }
+  @include xx {
+    padding-top: 20px;
+  }
+}
+
+
+&__locations {
+  display: flex;
+  align-items: center;
+
+  gap: $gap;
+  @include lg {
+    flex-direction: column;
+
+    gap: $gap-sm;
+  }
+}
+&__locations-adress {
+  color: $color-primary;
+
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.187;
+}
+&__locations-link {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $color-active;
+
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.16;
+}
+&__contacts {
+  display: flex;
+  flex-direction: column;
+
+  gap: $gap;
+}
+&__links {
+  display: flex;
+  align-items: center;
+
+  gap: $gap;
+  @include lg {
+    flex-direction: column;
+  }
+}
+
+&__phones-link {
+  color: $color-primary-alt;
+
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.187;
+}
+&__mail-link {
+  color: $color-active;
+
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.187;
+}
+
+&__sertification {
+  color: $color-gray-bg-text;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.187;
+
+  @include xx {
+    max-width: 250px;
+
+    text-align: center;
+  }
+}
+}
