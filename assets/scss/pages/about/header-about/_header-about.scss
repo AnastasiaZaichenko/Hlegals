@@ -1,0 +1,50 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.about-header {
+
+    background: blueviolet;
+
+    &__grid {
+        display: grid;
+        align-items: center;
+    
+        @extend %container;
+        gap: $gap-sm $gap;
+        grid-template-columns: auto 1fr;
+        @include sm-min {
+          padding-top: 50px;
+    
+          gap: $gap-sm $gap;
+          grid-template-areas: "a-logo a-actions" "a-logo a-menu";
+        }
+        @include sm {
+          padding-top: 20px;
+    
+          gap: $gap;
+          grid-template-areas: "a-actions a-actions" "a-logo a-menu";
+        }
+      }
+
+
+&__logo {
+    grid-area: a-logo;
+    display: flex;
+    align-items: flex-start;
+
+    @include lg{
+        align-items: center;
+        gap: 2px;
+    }
+
+  }
+
+  &__menu {
+    grid-area: a-menu;
+  }
+
+  &__actions {
+    grid-area: a-actions;
+  }
+}
+

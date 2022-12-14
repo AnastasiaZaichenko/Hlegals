@@ -1,0 +1,36 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.logo {
+
+&__link {
+font-weight: 400;
+font-size: 38px;
+color: $color-primary;
+
+@include lg {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.15;
+    padding-bottom: 9px;
+}
+}
+
+&__slash {
+    @include lg {
+        height: 24px;
+        width: 11px;
+        transform: translateY(-2px);
+
+
+    }
+}
+&__symbol {
+
+    @include lg {
+        height: 24px;
+        width: 21px;
+        transform: translateY(-2px);
+    }
+}
+}

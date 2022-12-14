@@ -32,3 +32,12 @@ setInterval(() => {
 descriptionsList.forEach(el => heightsArr.push(el.clientHeight));
 heightMax = Math.max(...heightsArr);
 descriptionsList.forEach(el => el.style.height = `${heightMax}px`);
+
+
+// кнопка для меню about
+$(document).ready(function() {
+	$(".about-menu__btn").on("click", function() {
+	  $(this).toggleClass("-active");
+	  $(".about-menu__list").stop(true, true).slideToggle(500);
+	});
+  });

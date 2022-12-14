@@ -6,7 +6,9 @@
   align-items: center;
   justify-content: flex-end;
 
+
   gap: 20px;
+
   @include sm-min {
     justify-content: flex-end;
     a {
