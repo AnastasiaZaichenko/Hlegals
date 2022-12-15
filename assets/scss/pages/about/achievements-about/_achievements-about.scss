@@ -1,0 +1,96 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+$size: 16px;
+
+.about-achievement {
+  background-color: $color-gray-bg;
+
+  &__container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+
+    text-align: center;
+
+    @extend %container;
+  }
+  &__title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: $color-primary;
+
+    font-size: 14px;
+    line-height: 1.21;
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    gap: 40px;
+    @include md {
+      gap: 20px;
+    }
+  }
+  &__pictures {
+    flex-basis: 300px;
+
+    border-radius: 12px;
+    background-color: $color-white;
+
+    @include md {
+      max-width: 157px;
+      min-height: 57px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+  }
+  &__image {
+    padding: 25px;
+
+    @include md {
+      width: 75%;
+      padding: 12px;
+    }
+  }
+
+  &__slider-indicators {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 20px;
+
+    gap: 14px;
+  }
+
+  &__slider-indicator {
+    width: $size;
+    height: $size;
+
+    opacity: 0.2;
+    border-radius: $size * 0.5;
+    background-color: $color-active;
+
+    &.-active {
+      opacity: 1;
+    }
+  }
+}
+
+
+.about-achievement__box > div:nth-child(1),
+.about-achievement__box > div:nth-child(4) {
+  @include lg {
+    display: none;
+  }
+}
+
+.about-achievement__slider-indicators div:nth-child(even) {
+  @include lg-min {
+    display: none;
+  }
+}

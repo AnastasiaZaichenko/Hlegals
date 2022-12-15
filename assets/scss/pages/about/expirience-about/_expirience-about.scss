@@ -51,11 +51,13 @@
       line-height: 1.44;
     }
   }
-  &__box {
+  &__list {
     display: flex;
     flex-direction: column;
 
     padding-left: $gap;
+
+    list-style: none;
 
     border-left: 4px solid $color-gray-bg-separator;
 
@@ -77,24 +79,26 @@
   }
   &__description {
     margin-top: 10px;
-  }
-  &__description {
-    &-count {
-      background: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
-      -webkit-background-clip: text;
-              background-clip: text;
 
-      font-size: 36px;
-      line-height: 1.16;
 
-      -webkit-text-fill-color: transparent;
-              text-fill-color: transparent;
-    }
     &-text {
       color: $color-primary;
 
       font-size: 18px;
       line-height: 21px;
     }
+  }
+
+  &__number {
+    background: linear-gradient(90.13deg, #f0145a 0.84%, #ef8080 99.96%);
+    -webkit-background-clip: text;
+            background-clip: text;
+
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.16;
+
+    -webkit-text-fill-color: transparent;
+            text-fill-color: transparent;
   }
 }
